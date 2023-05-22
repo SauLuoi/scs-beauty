@@ -64,4 +64,34 @@ $(document).ready(function () {
             }
         ]
     });
+
+    $('#sbi_images').slick({
+        slidesToShow: 9,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 0,
+        speed: 8000,
+        pauseOnHover: false,
+        cssEase: 'linear',
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 1919,
+                settings: {
+                    slidesToShow: 7,
+                }
+            },
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 5,
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: "unslick"
+            }
+        ]
+    });
+
 });

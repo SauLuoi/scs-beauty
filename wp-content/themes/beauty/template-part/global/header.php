@@ -98,9 +98,6 @@ $h_logo = get_field('h_logo', 'option');
                             <?php } ?>
                         </div>
                     <?php } ?>
-                    <?php if ($top_text_slide) { ?>
-                        <p class="txt1"><?php echo $top_text_slide; ?></p>
-                    <?php } ?>
                 </div>
                 <?php
                 if ($top_main_visual_feature) {

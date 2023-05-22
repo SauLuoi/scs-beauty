@@ -1,0 +1,1 @@
+<?php return array('dependencies' => array('lodash', 'qligg-store', 'wp-api-fetch', 'wp-block-editor', 'wp-components', 'wp-compose', 'wp-data', 'wp-date', 'wp-editor', 'wp-element', 'wp-hooks', 'wp-i18n', 'wp-notices'), 'version' => '3a26c2cc1116c2f5bb3d');
