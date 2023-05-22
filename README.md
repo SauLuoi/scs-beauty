@@ -1,0 +1,2 @@
+# scs-beauty
+Beauty website
