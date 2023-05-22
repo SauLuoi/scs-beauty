@@ -1,0 +1,180 @@
+<?php include('./common/include_disp.php'); ?>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<?=DispAfterHeadStartTag();?>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">   <!-- IEの互換表示無効 -->
+<meta name="format-detection" content="telephone=no">   <!-- 電話番号自動リンク無効 -->
+<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">   <!-- Skypeによる電話番号置換無効 -->
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="<?=SEO_DESCRIPTION?>">
+<meta name="keywords" content="<?=SEO_KEYWORDS?>">
+<title><?=SEO_TITLE?></title>
+<link rel="stylesheet" href="../assets/css/default.css">
+<link rel="stylesheet" href="../assets/css/sanitize.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">   <!-- Font Awesome BootstrapCDN -->
+<link rel="stylesheet" href="../assets/css/utility.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/slick.css">
+<link rel="stylesheet" href="../assets/css/form.css">
+<link rel="stylesheet" href="../assets/css/content.css">
+<?=DispBeforeHeadEndTag();?>
+</head>
+<body class="page-agent-recruitment page-agent-recruitment_confirm fnt-vn">
+<?=DispAfterBodyStartTag();?>
+<section id="wrapper"><!-- wrapper -->
+  <header id="header">
+    <div class="container">
+      <div class="inner">
+        <p class="btn-language bg01 sp"><img src="../assets/images/common/language.png" alt="language"></p>
+        <div class="left">
+          <p class="logo">
+            <a href="../">
+              <img src="../assets/images/common/logo.png" alt="美⼈">
+              <span>Người đẹp</span>
+            </a>
+          </p>
+          <div class="hamburger sp bg01">
+            <div class="hamburger-box">
+              <div class="hamburger-inner"></div>
+            </div>
+          </div>
+        </div>
+        <div id="gnav" class="right">
+          <nav class="navbar">
+            <a href="../item/">Mỹ phẩm</a>
+            <a href="../item/">Thực phẩm & Thực phẩm chức năng</a>
+            <a href="../item/">Sản phẩm khác</a>
+            <a href="../item/">Cửa hàng giao dịch</a>
+          </nav>
+          <p class="btn"><a href="../fda/">Tuyển dụng nhà phân phối</a></p>
+        </div>
+      </div>
+      <div class="language">
+        <a class="active" href="../../vn/">VN</a>
+        <a href="../../jp/">JP</a>
+      </div>
+    </div>
+    
+  <!-- mainvisual -->
+  <div id="mainvisual">
+    <div class="container">
+      <h1>TUYỂN DỤNG NHÀ PHÂN PHỐI</h1>
+    </div>
+  </div>
+  <!-- end mainvisual -->
+  </header >
+  <?=DispHeader()?>
+  <div id="breadcrumb">
+    <div class="container">
+      <ul class="nav-breadcrumb">
+        <li>
+          <a href="/"><span>TOP</span></a>
+        </li>
+        <li>
+          <span>Tuyển Dụng Nhà Phân Phối</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- end header -->
+  <main id="main"><!-- main -->
+    <div class="main-content full-page">
+      <div class="content">
+        <section id="sec-form" class="sec-form pb50">
+          <h3 class="ttlh2-post">Xác nhận nội dung đã nhập</h3>
+          <!-- wp-form -->
+          <div class="form-block">
+            <form method="post" action="./confirm.php#mf" name="form" onsubmit="return inputChk(this)">
+              <div class="tbl-contact">
+                <dl class="first">
+                  <dt>
+                    <span class="ttl text-center">Tên công ty/Tên đại lý</span>
+                  </dt>
+                  <dd>Nhập đầu vào của bạn</dd>
+                </dl>
+                <dl>
+                  <dt>
+                    <span class="ttl text-center">Tên</span>
+                  </dt>
+                  <dd>Nhập đầu vào của bạn</dd>
+                </dl>
+                <dl>
+                  <dt>
+                    <span class="ttl text-center">Địa chỉ Email</span>
+                  </dt>
+                  <dd>Nhập đầu vào của bạn</dd>
+                </dl>
+                <dl>
+                  <dt>
+                    <span class="ttl text-center">Điện thoại liên hệ</span>
+                  </dt>
+                  <dd>Nhập đầu vào của bạn</dd>
+                </dl>
+                <dl>
+                  <dt class="last">
+                    <span class="ttl text-center">Nội dung</span>
+                  </dt>
+                  <dd>Nhập đầu vào của bạnNhập đầu vào của bạnNhập đầu vào của bạnNhập đầu vào của bạn</dd>
+                </dl>
+              </div>
+              <div class="form-btn-block">
+                <!--Button back for comfirm-->
+                <p class="btn mb20"><a class="submit_btn_confirm" href="#back">TRỞ VỀ</a></p>
+                <div class="btn">
+                  <div class="form-btn">
+                    <input type="submit" name="Submit" value="Gửi nội dung" id="submit_btn" class="fnt-roboto">
+                    <input type="hidden" name="action" value="confirm">
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- end wp-form -->
+        </section>
+      </div>
+    </div>
+  </main>
+  <?=DispSide()?>
+  <!-- end main -->
+  <footer id="footer"><!-- footer -->
+    <div class="container">
+      <nav>
+        <a href="../">TRANG CHỦ</a>
+        <a href="../item/">THÔNG TIN SẢN PHẨM</a>
+        <a href="../company/">CỬA HÀNG GIAO DỊCH</a>
+        <a href="../">THÔNG TIN CÔNG TY</a>
+        <a href="../">TUYỂN DỤNG NHÀ PHÂN PHỐI</a>
+        <a href="../">CHÍNH SÁCH BẢO MẬT</a>
+      </nav>
+      <p class="btn"><a href="../../fda/">FDA取得依頼・ご相談はこちら</a></p>
+      <p class="logo">
+        <a href="../../">
+          <img src="../assets/images/common/logo.png" alt="美⼈">
+          <span>Người đẹp</span>
+        </a>
+      </p>
+    </div>
+    <address class="container">2023 &copy; Stage Asia LLC.</address>
+    <p class="page_up"><span class="up"></span></p>
+  </footer>
+  <?=DispFooter()?>
+  <!-- end footer -->
+</section>
+<!-- end wrapper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../assets/js/jquery-3.6.3.min.js"><\/script>');</script>   <!-- jQuery Fallback -->
+<!-- end -->
+<script src="../assets/js/script.js"></script>
+<script src="../assets/js/slick.min.js"></script>
+<script src="../assets/js/viewport.js"></script>
+<script>
+  $(".file").change(function() {
+    filename = this.files[0].name;
+    $(this).parent().find(".btn-file-name").text(filename)
+  });
+  </script>
+<?=DispBeforeBodyEndTag()?>
+</body>
+</html>
