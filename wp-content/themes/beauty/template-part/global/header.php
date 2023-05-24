@@ -1,5 +1,8 @@
 <?php
 $h_logo = get_field('h_logo', 'option');
+
+//field page
+$heading = get_field('heading');
 ?>
 
 <header id="header">
@@ -111,6 +114,13 @@ $h_logo = get_field('h_logo', 'option');
                 <?php } ?>
             </div>
         </div>
+    <?php } else { ?>
+        <div id="mainvisual">
+            <div class="container">
+                <h1><?php echo $heading; ?></h1>
+            </div>
+        </div>
+        <?php get_template_part("template-part/global/breadcrumb"); ?>
     <?php } ?>
     <!-- end mainvisual -->
 </header>

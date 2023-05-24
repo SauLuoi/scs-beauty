@@ -1473,7 +1473,8 @@ figure {
     position: relative;
     z-index: 98;
     padding-top: 30px;
-    background: url(../images/common/bg_mv.png) no-repeat center top;
+    background: url("../images/common/bg_mv.png") no-repeat center top;
+    background-size: cover;
 }
 
 #header .container {
@@ -1720,8 +1721,10 @@ figure {
 }
 
 body:not(.page-top) #mainvisual {
-    background: url(../images/common/mv.jpg);
+    background: url("../images/common/mv.jpg");
     height: 144px;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 body:not(.page-top) #mainvisual .container {
