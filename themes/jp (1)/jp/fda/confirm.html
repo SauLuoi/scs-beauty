@@ -1,0 +1,208 @@
+<?php include('./common/include_disp.php'); ?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<?=DispAfterHeadStartTag();?>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">   <!-- IEの互換表示無効 -->
+<meta name="format-detection" content="telephone=no">   <!-- 電話番号自動リンク無効 -->
+<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">   <!-- Skypeによる電話番号置換無効 -->
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="<?=SEO_DESCRIPTION?>">
+<meta name="keywords" content="<?=SEO_KEYWORDS?>">
+<title><?=SEO_TITLE?></title>
+<link rel="stylesheet" href="../assets/css/default.css">
+<link rel="stylesheet" href="../assets/css/sanitize.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">   <!-- Font Awesome BootstrapCDN -->
+<link rel="stylesheet" href="../assets/css/utility.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/slick.css">
+<link rel="stylesheet" href="../assets/css/form.css">
+<link rel="stylesheet" href="../assets/css/content.css">
+<?=DispBeforeHeadEndTag();?>
+</head>
+<body class="page-fda page-fda_confirm">
+<?=DispAfterBodyStartTag();?>
+<section id="wrapper"><!-- wrapper -->
+  <header id="header">
+    <div class="container">
+      <div class="inner">
+        <p class="btn-language bg01 sp"><img src="../assets/images/common/language.png" alt="language"></p>
+        <div class="left">
+          <p class="logo">
+            <a href="../">
+              <img src="../assets/images/common/logo.png" alt="美⼈">
+              <span>Người đẹp</span>
+            </a>
+          </p>
+          <div class="hamburger sp bg01">
+            <div class="hamburger-box">
+              <div class="hamburger-inner"></div>
+            </div>
+          </div>
+        </div>
+        <div id="gnav" class="right">
+          <nav class="navbar">
+            <a href="../item/">化粧品</a>
+            <a href="../item/">健康⾷品・⾷品</a>
+            <a href="../item/">雑貨</a>
+          </nav>
+          <p class="btn sp"><a href="../fda/">FDA取得依頼・ご相談はこちら</a></p>
+        </div>
+      </div>
+      <div class="language">
+        <a href="../../vn/">VN</a>
+        <a class="active" href="../../jp/">JP</a>
+      </div>
+    </div>
+    
+  <!-- mainvisual -->
+  <div id="mainvisual">
+    <div class="container">
+      <h1>FDA認可取得依頼・ご相談</h1>
+    </div>
+  </div>
+  <!-- end mainvisual -->
+  </header >
+  <?=DispHeader()?>
+  <div id="breadcrumb">
+    <div class="container">
+      <ul class="nav-breadcrumb">
+        <li>
+          <a href="/"><span>TOP</span></a>
+        </li>
+        <li>
+          <span>FDA認可取得依頼・ご相談</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- end header -->
+  <main id="main"><!-- main -->
+    <div class="main-content full-page">
+      <div class="content">
+        <section class="sec-form pb50">
+          <h2 class="ttlh2-post">⼊⼒内容確認</h2>
+          <!-- wp-form -->
+          <div class="form-block">
+            <form method="post" action="./confirm.php#mf" name="form" onsubmit="return inputChk(this)">
+              <div class="tbl-contact">
+                <dl class="first">
+                  <dt>
+                    <span class="ttl text-center">会社名・店舗名</span>
+                  </dt>
+                  <dd>入力内容が入ります。</dd>
+                </dl>
+                <dl>
+                  <dt>
+                    <span class="ttl text-center">お名前</span>
+                  </dt>
+                  <dd>入力内容が入ります。</dd>
+                </dl>
+                <dl>
+                  <dt>
+                    <span class="ttl text-center">フリガナ</span>
+                  </dt>
+                  <dd>入力内容が入ります。</dd>
+                </dl>
+                <dl>
+                  <dt>
+                    <span class="ttl text-center">役職</span>
+                  </dt>
+                  <dd>入力内容が入ります。</dd>
+                </dl>
+                <dl>
+                  <dt>
+                    <span class="ttl text-center">電話番号</span>
+                  </dt>
+                  <dd>入力内容が入ります。</dd>
+                </dl>
+                <dl>
+                  <dt>
+                    <span class="ttl text-center">メールアドレス</span>
+                  </dt>
+                  <dd>入力内容が入ります。</dd>
+                </dl>
+                <dl>
+                  <dt>
+                    <span class="ttl text-center">住所</span>
+                  </dt>
+                  <dd>入力内容が入ります。</dd>
+                </dl>
+                <dl>
+                  <dt>
+                    <span class="ttl text-center">商品リスト添付</span>
+                  </dt>
+                  <dd class="file-name">入力内容が入ります。</dd>
+                </dl>
+                <dl>
+                  <dt>
+                    <span class="ttl text-center">成分表添付</span>
+                  </dt>
+                  <dd class="file-name">入力内容が入ります。</dd>
+                </dl>
+                <dl>
+                  <dt class="last">
+                    <span class="ttl text-center">お問い合わせ内容</span>
+                  </dt>
+                  <dd>入力内容が入ります。入力内容が入ります。入力内容が入ります。入力内容が入ります。入力内容が入ります。入力内容が入ります。入力内容が入ります。</dd>
+                </dl>
+              </div>
+              <div class="form-btn-block">
+                <div class="btn">
+                  <div class="form-btn submit_btn_confirm">
+                    <input type="submit" name="Submit" value="⼊⼒内容確認に進む" id="submit_btn">
+                    <input type="hidden" name="action" value="confirm">
+                  </div>
+                </div>
+                <!--Button back for comfirm-->
+                <p class="btn mt20"><a href="#back">前に戻り修正を行う</a></p>
+              </div>
+            </form>
+          </div>
+          <!-- end wp-form -->
+        </section>
+      </div>
+    </div>
+  </main>
+  <?=DispSide()?>
+  <!-- end main -->
+  <footer id="footer"><!-- footer -->
+    <div class="container">
+      <nav>
+        <a href="../">HOME</a>
+        <a href="../">商品情報</a>
+        <a href="../">会社情報</a>
+        <a href="../">お問い合わせ</a>
+        <a href="../">プライバシーポリシー</a>
+      </nav>
+      <p class="btn"><a href="#">FDA取得依頼・ご相談はこちら</a></p>
+      <p class="logo">
+        <a href="../">
+          <img src="../assets/images/common/logo.png" alt="美⼈">
+          <span>Người đẹp</span>
+        </a>
+      </p>
+    </div>
+    <address class="container">2023 &copy; Stage Asia LLC.</address>
+    <p class="page_up"><span class="up"></span></p>
+  </footer>
+  <?=DispFooter()?>
+  <!-- end footer -->
+</section>
+<!-- end wrapper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../assets/js/jquery-3.6.3.min.js"><\/script>');</script>   <!-- jQuery Fallback -->
+<!-- end -->
+<script src="../assets/js/script.js"></script>
+<script src="../assets/js/slick.min.js"></script>
+<script src="../assets/js/viewport.js"></script>
+<script>
+  $(".file").change(function() {
+    filename = this.files[0].name;
+    $(this).parent().find(".btn-file-name").text(filename)
+  });
+  </script>
+<?=DispBeforeBodyEndTag()?>
+</body>
+</html>

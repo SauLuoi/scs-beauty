@@ -2,9 +2,15 @@
 // Register Style
 function core_theme_Style()
 {
+    $lang = pll_current_language('slug');
     // css
-    wp_register_style('main-css', get_stylesheet_directory_uri() . "/assets/vn/css/index.css", false, 'all');
-    wp_enqueue_style('main-css');
+    if ($lang === 'ja') {
+        wp_register_style('main-ja-css', get_stylesheet_directory_uri() . "/assets/jp/css/index.css", false, 'all');
+        wp_enqueue_style('main-ja-css');
+    } else {
+        wp_register_style('main-vn-css', get_stylesheet_directory_uri() . "/assets/vn/css/index.css", false, 'all');
+        wp_enqueue_style('main-vn-css');
+    }
 
     // js
     wp_register_script('jquery-js', "https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js", array('jquery'), false, true);
