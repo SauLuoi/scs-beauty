@@ -1,7 +1,8 @@
 <?php
 $args = array(
-    'post_type' => 'post',
-    'post_status' => 'publish'
+    'posts_per_page' => 10,
+    'post_type'   => 'post',
+    'post_status' => 'publish',
 );
 
 $the_query = new WP_Query($args);
