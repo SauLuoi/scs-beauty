@@ -1,5 +1,11 @@
 <?php
-$tags = get_tags();
+$args = array(
+    'post_type' => 'post-jp',
+    'hide_empty' => false,
+    'taxonomy' => 'posts_tags_jp',
+);
+
+$tags = get_tags($args);
 ?>
 <section class="keyword">
     <h2 class="fnt-bodoni ttlh2">

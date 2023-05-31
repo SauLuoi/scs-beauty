@@ -7,11 +7,6 @@ $h_button = get_field('h_button', 'option');
 $h_button_title = $h_button['title'];
 $h_button_url = $h_button['url'];
 $h_button_target = $h_button['target'];
-
-$h_button_ja = get_field('h_button_ja', 'option');
-$h_button_title_ja = $h_button_ja['title'];
-$h_button_url_ja = $h_button_ja['url'];
-$h_button_target_ja = $h_button_ja['target'];
 ?>
 <footer id="footer"><!-- footer -->
     <div class="container">
@@ -26,17 +21,9 @@ $h_button_target_ja = $h_button_ja['target'];
         }
         ?>
         <p class="btn">
-            <?php
-            if (pll_current_language('slug') === 'vi') {
-                ?>
-                <a href="<?php echo $h_button_url; ?>" target="<?php echo $h_button_target; ?>">
-                    <?php echo $h_button_title; ?>
-                </a>
-            <?php } else { ?>
-                <a href="<?php echo $h_button_url_ja; ?>" target="<?php echo $h_button_target_ja; ?>">
-                    <?php echo $h_button_title_ja; ?>
-                </a>
-            <?php } ?>
+            <a href="<?php echo $h_button_url; ?>" target="<?php echo $h_button_target; ?>">
+                <?php echo $h_button_title; ?>
+            </a>
         </p>
         <p class="logo">
             <a href="<?php bloginfo('url'); ?>">

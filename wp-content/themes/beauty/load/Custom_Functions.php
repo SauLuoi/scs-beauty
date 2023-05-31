@@ -2,15 +2,13 @@
 // Register Style
 function core_theme_Style()
 {
-    $lang = pll_current_language('slug');
     // css
-    if ($lang === 'ja') {
-        wp_register_style('main-ja-css', get_stylesheet_directory_uri() . "/assets/jp/css/index.css", false, 'all');
-        wp_enqueue_style('main-ja-css');
-    } else {
-        wp_register_style('main-vn-css', get_stylesheet_directory_uri() . "/assets/vn/css/index.css", false, 'all');
-        wp_enqueue_style('main-vn-css');
-    }
+    wp_register_style('main-ja-css', get_stylesheet_directory_uri() . "/assets/jp/css/index.css", false, 'all');
+    wp_enqueue_style('main-ja-css');
+
+    wp_register_style('main-vn-css', get_stylesheet_directory_uri() . "/assets/vn/css/index.css", false, 'all');
+    wp_enqueue_style('main-vn-css');
+
 
     // js
     wp_register_script('jquery-js', "https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js", array('jquery'), false, true);
@@ -39,6 +37,8 @@ if (!function_exists('core_theme_Setup')) {
         register_nav_menus(array(
             'primary' => __('Menu primary', 'text_domain'),
             'footer' => __('Menu Footer', 'text_domain'),
+            'footer-ja' => __('Menu Footer JP', 'text_domain'),
+            'primary-ja' => __('Menu primary JP', 'text_domain'),
         ));
 
         add_theme_support('post-thumbnails');
@@ -96,8 +96,8 @@ add_filter('wpcf7_form_elements', function ($content) {
 });
 
 // Remove Contact Form 7 script and css
-add_filter('wpcf7_load_js', '__return_false');
-add_filter('wpcf7_load_css', '__return_false');
+//add_filter('wpcf7_load_js', '__return_false');
+//add_filter('wpcf7_load_css', '__return_false');
 
 
 // Setup SMTP

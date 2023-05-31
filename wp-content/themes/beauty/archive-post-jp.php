@@ -1,13 +1,4 @@
 <?php
-/**
- * The template for displaying archive pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package WordPress
- * @subpackage Twenty_Twenty_One
- * @since Twenty Twenty-One 1.0
- */
 
 get_header();
 
@@ -23,7 +14,7 @@ if (is_category()) {
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
 $args = array(
-    'post_type' => 'post',
+    'post_type' => 'post-jp',
     'post_status' => 'publish',
     'cat' => $cat_id,
     'tag__in' => $tag_id,
@@ -36,7 +27,7 @@ $max_num_pages = $query->max_num_pages;
 ?>
 
 <header id="header">
-    <?php get_template_part("template-part/global/header"); ?>
+    <?php get_template_part("template-part/global/header-ja"); ?>
     <?php get_template_part("template-part/part/main-visual-breadcrumb"); ?>
 
 </header>
@@ -105,10 +96,14 @@ $max_num_pages = $query->max_num_pages;
     </div>
     <div class="side-bar">
         <div class="button-menu sp">&#8594;</div>
-        <?php get_template_part("template-part/global/side-bar"); ?>
+        <?php get_template_part("template-part/global/side-bar-ja"); ?>
     </div>
 </div>
 <?php get_template_part("template-part/part/sec-instagram"); ?>
+
+<!-- end main -->
+<?php get_template_part("template-part/global/footer-ja"); ?>
+
 
 <?php
 get_footer();

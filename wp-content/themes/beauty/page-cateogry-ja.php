@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Category
+Template Name: Category JP
 */
 
 get_header();
@@ -8,7 +8,7 @@ get_header();
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
 $args = array(
-    'post_type' => 'post',
+    'post_type' => 'post-jp',
     'post_status' => 'publish',
     'posts_per_page' => 12,
     'paged' => $paged,
@@ -72,7 +72,7 @@ $max_num_pages = $query->max_num_pages;
     </div>
     <div class="side-bar">
         <div class="button-menu sp">&#8594;</div>
-        <?php get_template_part("template-part/global/side-bar"); ?>
+        <?php get_template_part("template-part/global/side-bar-ja"); ?>
     </div>
 </div>
 <?php get_template_part("template-part/part/sec-instagram"); ?>

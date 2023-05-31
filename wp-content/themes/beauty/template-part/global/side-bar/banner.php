@@ -1,5 +1,5 @@
 <?php
-$page_id = get_option('page_on_front');
+$page_id = get_template_id('page.php');
 $top_image_galley = get_field('top_image_galley', $page_id);
 ?>
 <section class="banner">

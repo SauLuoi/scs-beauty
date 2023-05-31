@@ -5,7 +5,17 @@ $cats = get_the_category();
 $title = get_the_title();
 $feature = get_the_post_thumbnail_url();
 $content = get_the_content();
+
+//field
+$post_link_video = get_field('post_link_video');
+$post_choose_image = get_field('post_choose_image');
 ?>
+<header id="header">
+    <?php get_template_part("template-part/global/header-ja"); ?>
+    <?php get_template_part("template-part/part/main-visual-breadcrumb"); ?>
+
+</header>
+
 <div class="main-content">
     <div class="content">
         <div class="content-cats">
@@ -123,17 +133,20 @@ $content = get_the_content();
                                                 alt="img4"></figure>
             </div>
             <p>YouTubeのiframe埋込のイメージ</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/OIdMkZyhx7E"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-            <p>Google / Yahooなどの広告バナー挿入イメージ</p>
-            <div class="ads clearfix">
-                <figure class="pull-left"><img src="<?php bloginfo("template_url"); ?>/assets/vn/images/item/img7.jpg"
-                                               alt="ads"></figure>
-                <figure class="pull-right"><img src="<?php bloginfo("template_url"); ?>/assets/vn/images/item/img8.jpg"
-                                                alt="ads"></figure>
-            </div>
+            <?php echo $post_link_video; ?>
+
+            <?php if ($post_choose_image) { ?>
+                <p>Google / Yahooなどの広告バナー挿入イメージ</p>
+                <div class="ads clearfix">
+                    <div class="ads-wrapper">
+                        <?php foreach ($post_choose_image as $adv) { ?>
+                            <figure class="pull-left">
+                                <img src="<?php echo $adv; ?>" alt="ads">
+                            </figure>
+                        <?php } ?>
+                    </div>
+                </div>
+            <?php } ?>
         </div>
 
         <!--        box-info-->
@@ -151,18 +164,20 @@ $content = get_the_content();
             <a href="<?php bloginfo('url'); ?>/item" class="back-list">Back to list</a>
 
             <?php next_post_link('%link', __('next')); ?>
-            <!--            <a href="#next" class="next">Next</a>-->
         </div>
 
         <!--        box recomment-->
-        <?php get_template_part("template-part/part/box-recommend"); ?>
+        <?php get_template_part("template-part/part-jp/box-recommend"); ?>
 
     </div>
     <div class="side-bar">
         <div class="button-menu sp">&#8594;</div>
-        <?php get_template_part("template-part/global/side-bar"); ?>
+        <?php get_template_part("template-part/global/side-bar-ja"); ?>
     </div>
 </div>
 <?php get_template_part("template-part/part/sec-instagram"); ?>
+
+<!-- end main -->
+<?php get_template_part("template-part/global/footer-ja"); ?>
 
 <?php get_footer(); ?>

@@ -2,7 +2,7 @@
 $args = array(
     'post_type' => 'post',
     'post_status' => 'publish',
-    'showposts' => 5,
+    'showposts' => 4,
 );
 $query_args = new WP_Query($args);
 ?>

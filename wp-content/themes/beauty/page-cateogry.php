@@ -10,13 +10,18 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args = array(
     'post_type' => 'post',
     'post_status' => 'publish',
-    'posts_per_page' => 9,
+    'posts_per_page' => 12,
     'paged' => $paged,
 );
 $query = new WP_Query($args);
 $max_num_pages = $query->max_num_pages;
 
 ?>
+<header id="header">
+    <?php get_template_part("template-part/global/header"); ?>
+    <?php get_template_part("template-part/part/main-visual-breadcrumb"); ?>
+
+</header>
 
 <div class="main-content">
     <div class="content">
@@ -72,6 +77,8 @@ $max_num_pages = $query->max_num_pages;
 </div>
 <?php get_template_part("template-part/part/sec-instagram"); ?>
 
+<!-- end main -->
+<?php get_template_part("template-part/global/footer"); ?>
 <?php
 get_footer();
 ?>

@@ -2,15 +2,19 @@
 include_once get_template_directory() . '/load/Custom_Functions.php';
 include_once get_template_directory() . '/load/CTPost_CTTax.php';
 include_once get_template_directory() . '/load/Performance.php';
-
+require_once(get_template_directory() . '/load/func/contact.php');
 
 /* Create CTPost */
 // (title, slug_code, slug)
 // create_post_type("Sản phẩm","product","san-pham");
+create_post_type("Posts JP", "post-jp", "post-jp");
 
 /* Create CTTax */
 // (title, slug, slug_code, post_type)
 // create_taxonomy_theme("Danh mục Sản phẩm","danh-muc-san-pham","product_cat","product");
+create_taxonomy_theme("Categories", "categories-jp", "posts_cat_jp", "post-jp");
+
+create_tag_taxonomies('Tags', 'tags-jp', 'posts_tags_jp', 'post-jp');
 
 
 // Create menu Theme option use Acf Pro
@@ -85,11 +89,6 @@ function core_paginationCustom($max_num_pages)
             echo '<a href="' . esc_url(get_pagenum_link($paged - 1)) . '" class="pagination-a">
             &nbsp;</a>';
         }
-//        if ($paged > ($max_num_pages - 2)) {
-//            // echo '<li class="pagination-li"><a href="'.esc_url( get_pagenum_link( $paged - 5 ) ).'" class="pagination-a">
-//            // -5</a></li>';
-//            echo '<a href="javascript:void(0)" class="">...</a>';
-//        }
 
         for ($i = 1; $i <= $max_num_pages; $i++) {
             // $half_total_links = floor( 5 / 2);
@@ -238,4 +237,17 @@ function convert_name($str)
     $str = preg_replace("/(\“|\”|\‘|\’|\,|\!|\&|\;|\@|\#|\%|\~|\`|\=|\_|\'|\]|\[|\}|\{|\)|\(|\+|\^)/", '-', $str);
     $str = preg_replace("/( )/", '-', $str);
     return $str;
+}
+
+//get id page with template name
+function get_template_id($template)
+{
+    $pages = get_pages(array(
+        'meta_key' => '_wp_page_template',
+        'meta_value' => $template,
+    ));
+    foreach ($pages as $page) {
+        $id = $page->ID;
+    }
+    return $id;
 }

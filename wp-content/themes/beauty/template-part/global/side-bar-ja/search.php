@@ -1,5 +1,5 @@
 <?php
-$page_id = get_option('page_on_front');
+$page_id = get_template_id('page-ja.php');
 $top_search_category = get_field('top_search_category', $page_id);
 ?>
 <section class="sec_page">

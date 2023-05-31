@@ -1,5 +1,11 @@
 <?php
-$tags = get_tags();
+$args = array(
+    'post_type' => 'post',
+    'hide_empty' => false,
+);
+
+$tags = get_tags($args);
+
 ?>
 <section id="sec04" class="sec04">
     <div class="container">

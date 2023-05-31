@@ -5,7 +5,7 @@ foreach ($cats as $cat) {
     $cat_id = $cat->term_id;
 }
 $args = array(
-    'post_type' => 'post',
+    'post_type' => 'post-jp',
     'post_status' => 'publish',
     'cat' => $cat_id,
     'showpost' => 10,
