@@ -9,7 +9,7 @@ $h_logo = get_field('h_logo', 'option');
         </p>
         <div class="left">
             <p class="logo">
-                <a href="<?php bloginfo('url'); ?>">
+                <a href="<?php bloginfo('url'); ?>/jp">
                     <img src="<?php echo $h_logo; ?>" alt="美⼈">
                     <span>Người đẹp</span>
                 </a>
@@ -24,7 +24,7 @@ $h_logo = get_field('h_logo', 'option');
             <?php
             if (function_exists('wp_nav_menu')) {
                 $args = array(
-                    'theme_location' => 'primary',
+                    'theme_location' => 'primary-ja',
                     'container' => 'nav',
                     'container_class' => 'navbar',
                     'menu_class' => 'item',

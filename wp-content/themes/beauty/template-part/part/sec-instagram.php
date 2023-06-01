@@ -1,5 +1,6 @@
 <?php
 $ins_link = get_field('ins_link');
+$ins_embed = get_field('ins_embed');
 ?>
 <section id="sec05" class="sec_instagram">
     <div class="container">
@@ -9,5 +10,5 @@ $ins_link = get_field('ins_link');
             </a>
         </h2>
     </div>
-    <?php echo do_shortcode('[instagram-feed feed=1]'); ?>
+    <?php echo do_shortcode($ins_embed); ?>
 </section>

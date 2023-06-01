@@ -1,6 +1,6 @@
 <?php
 $args = array(
-    'post_type' => 'post',
+    'post_type' => 'post-jp',
     'post_status' => 'publish',
     'showposts' => 4,
 );

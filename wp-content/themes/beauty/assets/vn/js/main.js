@@ -94,4 +94,34 @@ $(document).ready(function () {
         ]
     });
 
+    $('.slider_recommend').slick({
+        dots: false,
+        infinite: true,
+        speed: 3000,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        arrows: true,
+        responsive: [
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    arrows: false,
+                }
+            }
+        ]
+    });
+
+    setHeightItem();
 });
+
+function setHeightItem() {
+    var widthItem = $('.sec01 .inner .item figure, .sec02 .inner .item figure');
+    widthItem.height(widthItem.width());
+}
+
+$(document).ready(function () {
+
+})

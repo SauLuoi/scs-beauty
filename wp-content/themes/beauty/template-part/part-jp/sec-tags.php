@@ -1,7 +1,8 @@
 <?php
 $args = array(
-    'post_type' => 'post',
+    'post_type' => 'post-jp',
     'hide_empty' => false,
+    'taxonomy' => 'posts_tags_jp',
 );
 
 $tags = get_tags($args);

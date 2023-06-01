@@ -1441,7 +1441,7 @@ figure {
     border-right: 1px solid #B2B7B9;
 }
 
-.language .current-lang a, .language a:hover {
+.language a.active, .language a:hover {
     background-color: #666;
     color: #fff;
 }
@@ -2204,8 +2204,9 @@ body:not(.page-top) #mainvisual h1 {
     display: flex;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center;
     gap: 48px;
+    flex-wrap: wrap;
+    justify-content: start;
 }
 
 .sec_page .inner a {
@@ -2226,6 +2227,16 @@ body:not(.page-top) #mainvisual h1 {
     box-sizing: border-box;
     background: -webkit-gradient(linear, left top, left bottom, from(var(--c-primary)), to(var(--c-primary))) no-repeat center left/24px 1px;
     background: linear-gradient(var(--c-primary), var(--c-primary)) no-repeat center left/24px 1px;
+}
+
+.sec_page .inner a figure {
+    width: 40%;
+}
+
+.sec_page .inner a figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .sec_page .inner a span {

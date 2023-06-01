@@ -18,7 +18,8 @@
     <?php wp_head(); ?>
     <?php echo get_field('insert_code_header', 'option'); ?>
 </head>
-<body class="<?php echo is_front_page() ? 'page-top' : ''; ?> <?php echo pll_current_language('slug') === 'vi' ? 'fnt-vn' : '' ?>">
+<?php
+$id_front = get_the_ID();
+?>
+<body class="<?php echo is_front_page() || $id_front === 164 ? 'page-top' : ''; ?>">
 <section id="wrapper"><!-- wrapper -->
-    <?php get_template_part("template-part/global/header"); ?>
-    <main id="main"><!-- main -->

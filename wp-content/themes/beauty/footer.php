@@ -1,6 +1,3 @@
-</main>
-<!-- end main -->
-<?php get_template_part("template-part/global/footer"); ?>
 </section>
 <!-- end -->
 

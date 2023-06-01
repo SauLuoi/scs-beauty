@@ -1,3 +1,7 @@
+.wpcf7-spinner {
+    display: none;
+}
+
 .underline {
     text-decoration: underline !important;
 }
@@ -810,7 +814,7 @@ form .form-btn:hover::after {
     }
 }
 
-.error {
+.error, .wpcf7-not-valid-tip {
     color: #FF0000;
 }
 

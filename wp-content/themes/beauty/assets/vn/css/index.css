@@ -7,5 +7,9 @@
 @import "./form.css";
 @import "./lightbox.css";
 @import "./top.css";
+.ads-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
 
 /*# sourceMappingURL=index.css.map */
