@@ -8,7 +8,7 @@ $args = array(
     'post_type' => 'post',
     'post_status' => 'publish',
     'cat' => $cat_id,
-    'showpost' => 10,
+    'showpost' => 8,
 );
 $query = new WP_Query($args);
 ?>
@@ -36,6 +36,9 @@ $query = new WP_Query($args);
                         <p class="txt">
                             <?php foreach ($tags as $tag) {
                                 $tag_name = $tag->name;
+                                if (strlen($tag_name) > 25) {
+                                    $tag_name = substr($tag_name, 0, 25) . '...';
+                                }
                                 ?>
                                 <small class="c_53b5ed"># <?php echo $tag_name; ?></small>
                             <?php } ?>

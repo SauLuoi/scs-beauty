@@ -2231,12 +2231,14 @@ body:not(.page-top) #mainvisual h1 {
 
 .sec_page .inner a figure {
     width: 40%;
+    height: 80px;
 }
 
 .sec_page .inner a figure img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    overflow: hidden;
 }
 
 .sec_page .inner a span {

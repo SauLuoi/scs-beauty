@@ -39,6 +39,9 @@ $query_args = new WP_Query($args);
                             if ($tag) {
                                 foreach ($tag as $tag_item) {
                                     $tag_name = $tag_item->name;
+                                    if (strlen($tag_name) > 25) {
+                                        $tag_name = substr($tag_item->name, 0, 25) . '...';
+                                    }
                                     $tag_slug = $tag_item->slug;
                                     ?>
                                     <a href="<?php bloginfo('url'); ?>/tag/<?php echo $tag_slug; ?>" class="c_53b5ed">
