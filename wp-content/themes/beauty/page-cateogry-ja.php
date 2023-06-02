@@ -51,7 +51,14 @@ $max_num_pages = $query->max_num_pages;
 <div class="main-content">
     <div class="content">
         <h2 class="ttlh2-post">
-            Category
+            <?php if ($tags_id) {
+                echo get_term($tags_id)->name;
+            } elseif ($cats_id) {
+                echo get_term($cats_id)->name;
+            } else {
+                echo "Category";
+            }
+            ?>
         </h2>
         <?php if ($query->have_posts()) { ?>
             <div class="list-item-post">

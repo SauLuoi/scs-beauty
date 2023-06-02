@@ -1,6 +1,6 @@
 <?php
 $id = get_the_ID();
-$cats = get_the_category();
+$cats = wp_get_post_terms($id, 'posts_cat_jp');
 $cat_id = [];
 foreach ($cats as $cat) {
     $cat_id = $cat->term_id;
@@ -8,8 +8,14 @@ foreach ($cats as $cat) {
 $args = array(
     'post_type' => 'post-jp',
     'post_status' => 'publish',
-    'cat' => $cat_id,
-    'showpost' => 8,
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'posts_cat_jp',
+            'field' => 'term_id',
+            'terms' => $cat_id,
+        )
+    ),
+    'showposts' => 8,
     'post__not_in' => array($id),
 );
 $query = new WP_Query($args);

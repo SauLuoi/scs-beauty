@@ -110,7 +110,7 @@
 
 .main-content .list-item-post .item .ttl {
     overflow: hidden;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     display: -webkit-box;
 }
@@ -1385,7 +1385,7 @@
 .main-content .side-bar .new-item .item .ttl {
     width: calc(100% - 115px);
     overflow: hidden;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     display: -webkit-box;
 }

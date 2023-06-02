@@ -15,11 +15,12 @@ $tags = get_tags($args);
     <div class="tags fnt-roboto">
         <?php
         foreach ($tags as $tag) {
+            $tag_id = $tag->term_id;
             $tag_name = $tag->name;
             $tag_slug = $tag->slug;
             $tag_link = get_tag_link($tag->term_id);
             ?>
-            <a href="<?php echo $tag_link; ?>"># <?php echo $tag_name; ?></a>
+            <a href="<?php bloginfo("url"); ?>/item-jp?tag=<?php echo $tag_id; ?>"># <?php echo $tag_name; ?></a>
         <?php } ?>
     </div>
 </section>
