@@ -68,9 +68,11 @@ $store_city = get_field('store_city');
                                                         <th>Địa chỉ</th>
                                                         <td>
                                                             <span><?php echo $agent_address; ?></span><br>
-                                                            <a href="<?php echo $agent_maps; ?>"
-                                                               target="_blank"
-                                                               class="btn-map-link">map</a>
+                                                            <?php if ($agent_maps) { ?>
+                                                                <a href="<?php echo $agent_maps; ?>"
+                                                                   target="_blank"
+                                                                   class="btn-map-link">map</a>
+                                                            <?php } ?>
                                                         </td>
                                                     </tr>
                                                     </tbody>

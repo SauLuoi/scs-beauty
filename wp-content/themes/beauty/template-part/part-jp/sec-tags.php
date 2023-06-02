@@ -27,6 +27,6 @@ $tags = get_tags($args);
                 <?php } ?>
             </div>
         <?php } ?>
-        <p class="btn"><a href="./item/">VIEW ALL</a></p>
+        <p class="btn"><a href="./item-jp/">VIEW ALL</a></p>
     </div>
 </section>

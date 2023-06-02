@@ -101,6 +101,7 @@ function create_tag_taxonomies($title, $slug, $slug_code, $post_type)
         'update_count_callback' => '_update_post_term_count',
         'query_var' => true,
         'rewrite' => array('slug' => __($slug, 'text_domain')),
+        'show_tagcloud' => true,
     );
     register_taxonomy($slug_code, $post_type, $args);
 }

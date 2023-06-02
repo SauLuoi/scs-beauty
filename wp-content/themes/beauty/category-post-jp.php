@@ -1,15 +1,28 @@
 <?php
-/*
-Template Name: Category JP
-*/
+/**
+ * The template for displaying archive pages
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package WordPress
+ * @subpackage Twenty_Twenty_One
+ * @since Twenty Twenty-One 1.0
+ */
 
 get_header();
 
+$description = get_the_archive_description();
+$cat_id = [];
+if (is_category()) {
+    $category_info = get_category_by_slug(get_query_var('category_name'));
+    $cat_id[] = $category_info->term_id;
+}
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
 $args = array(
     'post_type' => 'post-jp',
     'post_status' => 'publish',
+    'cat' => $cat_id,
     'posts_per_page' => 12,
     'paged' => $paged,
 );
@@ -17,8 +30,9 @@ $query = new WP_Query($args);
 $max_num_pages = $query->max_num_pages;
 
 ?>
+
 <header id="header">
-    <?php get_template_part("template-part/global/header-ja"); ?>
+    <?php get_template_part("template-part/global/header"); ?>
     <?php get_template_part("template-part/part/main-visual-breadcrumb"); ?>
 
 </header>
@@ -26,7 +40,10 @@ $max_num_pages = $query->max_num_pages;
 <div class="main-content">
     <div class="content">
         <h2 class="ttlh2-post">
-            Category
+            <?php if (is_category()) {
+                $category_name = single_cat_title();
+                echo $category_name;
+            } ?>
         </h2>
         <?php if ($query->have_posts()) { ?>
             <div class="list-item-post">
@@ -69,13 +86,18 @@ $max_num_pages = $query->max_num_pages;
         wp_reset_postdata(); ?>
 
         <?php core_paginationCustom($max_num_pages); ?>
+
     </div>
     <div class="side-bar">
         <div class="button-menu sp">&#8594;</div>
-        <?php get_template_part("template-part/global/side-bar-ja"); ?>
+        <?php get_template_part("template-part/global/side-bar"); ?>
     </div>
 </div>
 <?php get_template_part("template-part/part/sec-instagram"); ?>
+
+<!-- end main -->
+<?php get_template_part("template-part/global/footer"); ?>
+
 
 <?php
 get_footer();

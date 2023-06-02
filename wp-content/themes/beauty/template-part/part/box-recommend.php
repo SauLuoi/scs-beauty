@@ -1,6 +1,7 @@
 <?php
 $cats = get_the_category();
 $cat_id = [];
+$id = get_the_ID();
 foreach ($cats as $cat) {
     $cat_id = $cat->term_id;
 }
@@ -24,12 +25,13 @@ $query = new WP_Query($args);
                 $query->the_post();
                 $title = get_the_title();
                 $link = get_the_permalink();
-                $tags = get_the_tags()
+                $tags = get_the_tags();
+                $feature = get_the_post_thumbnail_url();
                 ?>
                 <a href="<?php echo $link; ?>" class="item">
                     <figure>
-                        <img src="<?php bloginfo("template_url"); ?>/assets/vn/images/item/post1.jpg"
-                             alt="Nhập tên sản phẩm.Nhập tên sản phẩm.">
+                        <img src="<?php echo $feature; ?>"
+                             alt="<?php echo $title; ?>">
                     </figure>
                     <h3 class="ttl"><strong><?php echo $title; ?></strong></h3>
                     <?php if ($tags) { ?>

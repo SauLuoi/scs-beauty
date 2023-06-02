@@ -52,7 +52,7 @@ $h_logo = get_field('h_logo', 'option');
         </div>
     </div>
     <div class="language">
-        <a class="active" href="<?php bloginfo('url'); ?>">VN</a>
-        <a href="<?php bloginfo('url'); ?>/jp/">JP</a>
+        <a href="<?php bloginfo('url'); ?>">VN</a>
+        <a class="active" href="<?php bloginfo('url'); ?>/jp/">JP</a>
     </div>
 </div>
