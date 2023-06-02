@@ -19,7 +19,7 @@ $query_args = new WP_Query($args);
                 while ($query_args->have_posts()) {
                     $query_args->the_post();
                     $title = get_the_title();
-                    $tag = get_the_tags();
+                    $tag = wp_get_post_terms(get_the_ID(), 'posts_tags_jp');
                     $feature = get_the_post_thumbnail_url();
                     $link = get_the_permalink();
                     ?>

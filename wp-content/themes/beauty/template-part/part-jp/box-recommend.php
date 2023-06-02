@@ -8,7 +8,7 @@ $args = array(
     'post_type' => 'post-jp',
     'post_status' => 'publish',
     'cat' => $cat_id,
-    'showpost' => 10,
+    'showpost' => 8,
 );
 $query = new WP_Query($args);
 ?>
@@ -24,7 +24,7 @@ $query = new WP_Query($args);
                 $query->the_post();
                 $title = get_the_title();
                 $link = get_the_permalink();
-                $tags = get_the_tags();
+                $tags = wp_get_post_terms(get_the_ID(), 'posts_tags_jp');
                 $feature = get_the_post_thumbnail_url();
                 ?>
                 <a href="<?php echo $link; ?>" class="item">
@@ -37,6 +37,9 @@ $query = new WP_Query($args);
                         <p class="txt">
                             <?php foreach ($tags as $tag) {
                                 $tag_name = $tag->name;
+                                if (strlen($tag_name) > 25) {
+                                    $tag_name = substr($tag_name, 0, 25) . '...';
+                                }
                                 ?>
                                 <small class="c_53b5ed"># <?php echo $tag_name; ?></small>
                             <?php } ?>
