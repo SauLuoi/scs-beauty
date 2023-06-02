@@ -14,18 +14,12 @@ $top_search_category = get_field('top_search_category', $page_id);
             $cat_slug = get_category_link($cat_id);
             $cat_feature = get_field('feature', 'category_' . $cat_id);
             ?>
-            <a href="<?php echo $cat_slug; ?>" class="fnt-roboto">
+            <a href="<?php bloginfo("url");?>/item-jp?cat=<?php echo $cat_id; ?>" class="fnt-roboto">
                 <span><?php echo $cat_name; ?></span>
                 <figure>
                     <img src="<?php echo $cat_feature; ?>" alt="<?php echo $cat_name; ?>">
                 </figure>
             </a>
         <?php } ?>
-        <a href="../item/" class="fnt-roboto">
-            <span>Sản phẩm khác</span>
-            <figure>
-                <img src="<?php bloginfo("template_url"); ?>/assets/vn//images/s3_img3.jpg" alt="Sản phẩm khác">
-            </figure>
-        </a>
     </div>
 </section>

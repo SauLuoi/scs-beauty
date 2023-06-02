@@ -2,17 +2,19 @@
 include_once get_template_directory() . '/load/Custom_Functions.php';
 include_once get_template_directory() . '/load/CTPost_CTTax.php';
 include_once get_template_directory() . '/load/Performance.php';
-require_once(get_template_directory() . '/load/func/contact.php');
+//require_once(get_template_directory() . '/load/func/contact.php');
 
 /* Create CTPost */
 // (title, slug_code, slug)
 // create_post_type("Sản phẩm","product","san-pham");
 create_post_type("Posts JP", "post-jp", "post-jp");
+create_post_type("Location", "location", "location");
 
 /* Create CTTax */
 // (title, slug, slug_code, post_type)
 // create_taxonomy_theme("Danh mục Sản phẩm","danh-muc-san-pham","product_cat","product");
 create_taxonomy_theme("Categories", "categories-jp", "posts_cat_jp", "post-jp");
+create_taxonomy_theme("District", "district", "district", "location");
 
 create_tag_taxonomies('Tags', 'tags-jp', 'posts_tags_jp', 'post-jp');
 
@@ -85,8 +87,13 @@ function core_paginationCustom($max_num_pages)
 
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; // trang hiện tại (8)
 
-        if ($paged >= 1) {
+        if ($paged > 1) {
             echo '<a href="' . esc_url(get_pagenum_link($paged - 1)) . '" class="pagination-a">
+            &nbsp;</a>';
+        }
+
+        if ($paged == 1) {
+            echo '<a href="javascript:void(0)" class="pagination-a">
             &nbsp;</a>';
         }
 
@@ -106,14 +113,14 @@ function core_paginationCustom($max_num_pages)
 //        if ($paged < ($max_num_pages - 2)) {
 //            echo '<a href="javascript:void(0)" class="">...</a>';
 //        }
-        if ($paged <= $max_num_pages) {
+        if ($paged < $max_num_pages) {
             echo '<a href="' . esc_url(get_pagenum_link($paged + 1)) . '" class="pagination-a">
             &nbsp;</a>';
         }
-//        if ($paged < ($max_num_pages - 5)) {
-//            echo '<a href="' . esc_url(get_pagenum_link($max_num_pages)) . '" class="pagination-a">
-//            最後 »</a>';
-//        }
+        if ($paged == $max_num_pages) {
+            echo '<a href="javascript:void(0)" class="pagination-a">
+            &nbsp;</a>';
+        }
     }
 
     echo '</div>';

@@ -21,11 +21,5 @@ $top_search_category = get_field('top_search_category', $page_id);
                 </figure>
             </a>
         <?php } ?>
-        <a href="../item/" class="fnt-roboto">
-            <span>Sản phẩm khác</span>
-            <figure>
-                <img src="<?php bloginfo("template_url"); ?>/assets/vn//images/s3_img3.jpg" alt="Sản phẩm khác">
-            </figure>
-        </a>
     </div>
 </section>

@@ -1,4 +1,5 @@
 <?php
+$id = get_the_ID();
 $cats = get_the_category();
 $cat_id = [];
 foreach ($cats as $cat) {
@@ -9,6 +10,7 @@ $args = array(
     'post_status' => 'publish',
     'cat' => $cat_id,
     'showpost' => 8,
+    'post__not_in' => array($id),
 );
 $query = new WP_Query($args);
 ?>

@@ -7,12 +7,37 @@ get_header();
 
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
-$args = array(
-    'post_type' => 'post-jp',
-    'post_status' => 'publish',
-    'posts_per_page' => 12,
-    'paged' => $paged,
-);
+$tags_id = $_GET['tag'] ? $_GET['tag'] : '';
+$cats_id = $_GET['cat'] ? $_GET['cat'] : '';
+
+if ($tags_id || $cats_id) {
+    $args = array(
+        'post_type' => 'post-jp',
+        'post_status' => 'publish',
+        'posts_per_page' => 12,
+        'paged' => $paged,
+        'tax_query' => array(
+            'relation' => 'OR',
+            array(
+                'taxonomy' => 'posts_tags_jp',
+                'field' => 'term_id',
+                'terms' => $tags_id,
+            ),
+            array(
+                'taxonomy' => 'posts_cat_jp',
+                'field' => 'term_id',
+                'terms' => $cats_id,
+            )
+        ),
+    );
+} else {
+    $args = array(
+        'post_type' => 'post-jp',
+        'post_status' => 'publish',
+        'posts_per_page' => 12,
+        'paged' => $paged,
+    );
+}
 $query = new WP_Query($args);
 $max_num_pages = $query->max_num_pages;
 
@@ -35,7 +60,7 @@ $max_num_pages = $query->max_num_pages;
                     $query->the_post();
                     $title = get_the_title();
                     $feature = get_the_post_thumbnail_url();
-                    $tags = get_the_tags();
+                    $tags = wp_get_post_terms(get_the_ID(), 'posts_tags_jp');
                     $link = get_the_permalink();
                     ?>
                     <div class="item">
@@ -54,9 +79,11 @@ $max_num_pages = $query->max_num_pages;
                                 <?php
                                 foreach ($tags as $tag) {
                                     $tag_name = $tag->name;
+                                    $tag_id = $tag->term_id;
                                     $tag_link = get_tag_link($tag->term_id);
                                     ?>
-                                    <a href="<?php echo $tag_link; ?>" class="c_53b5ed">
+                                    <a href="<?php echo bloginfo("url"); ?>/item-jp?tag=<?php echo $tag_id; ?>"
+                                       class="c_53b5ed">
                                         <small># <?php echo $tag_name; ?></small>
                                     </a>
                                 <?php } ?>
@@ -77,6 +104,8 @@ $max_num_pages = $query->max_num_pages;
 </div>
 <?php get_template_part("template-part/part/sec-instagram"); ?>
 
+<!-- end main -->
+<?php get_template_part("template-part/global/footer-ja"); ?>
 <?php
 get_footer();
 ?>

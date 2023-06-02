@@ -41,7 +41,7 @@ $query_args = new WP_Query($args);
                                     $tag_name = $tag_item->name;
                                     $tag_slug = $tag_item->slug;
                                     ?>
-                                    <a href="<?php bloginfo('url'); ?>/tag/<?php echo $tag_slug; ?>" class="c_53b5ed">
+                                    <a href="<?php bloginfo('url'); ?>/item-jp?tag=<?php echo $tag_item->id;?>" class="c_53b5ed">
                                         <small># <?php echo $tag_name; ?></small>
                                     </a>
                                 <?php }

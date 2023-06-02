@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <?php
-$tags = get_the_tags();
+$tags = wp_get_post_terms(get_the_ID(), 'posts_tags_jp');
 $cats = wp_get_post_terms(get_the_ID(), 'posts_cat_jp');
 $title = get_the_title();
 $feature = get_the_post_thumbnail_url();
