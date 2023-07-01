@@ -1471,7 +1471,7 @@ figure {
 #header {
     --logo-width-sp: 50%;
     position: relative;
-    z-index: 98;
+    z-index: 1;
     padding-top: 30px;
     background: url("../images/common/bg_mv.png") no-repeat center top;
     background-size: cover;
@@ -1482,7 +1482,7 @@ figure {
     z-index: 98;
 }
 
-#header a {
+#header a , #gnav a {
     text-decoration: none;
     display: block;
 }
@@ -1506,24 +1506,24 @@ figure {
         padding-bottom: 40px;
     }
 
-    #header nav a {
+    #gnav nav a {
         background: var(--bg-linear);
         background-size: 0 1px;
         background-repeat: no-repeat;
         background-position: center bottom;
     }
 
-    .page-top #header nav a {
+    .page-top #gnav nav a {
         margin-left: 24px;
         margin-right: 24px;
     }
 
-    #header nav a:hover {
+    #gnav nav a:hover {
         background-size: 100% 1px;
     }
 }
 
-#header #gnav .info {
+#gnav .info {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1533,15 +1533,15 @@ figure {
     font-size: 12px;
 }
 
-#header #gnav .info a {
+#gnav .info a {
     display: inline-block;
 }
 
-#header #gnav .info p {
+#gnav .info p {
     margin-left: 10px;
 }
 
-#header #gnav .info p > span {
+#gnav .info p > span {
     background-color: var(--c-primary);
     border-radius: 2px;
     padding: 2px 5px;
@@ -1608,7 +1608,7 @@ figure {
         letter-spacing: -0.05em !important;
     }
 
-    #header #gnav {
+    #gnav {
         position: absolute;
         left: 0;
         right: 0;
@@ -1619,7 +1619,7 @@ figure {
         padding-bottom: 20px;
     }
 
-    #header #gnav nav ul {
+    #gnav nav ul {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1627,7 +1627,7 @@ figure {
         margin-bottom: 20px;
     }
 
-    #header #gnav nav a {
+    #gnav nav a {
         color: #fff;
         padding: 10px 2%;
         border-bottom: 1px solid currentColor;
@@ -2303,16 +2303,16 @@ body:not(.page-top) #mainvisual h1 {
     opacity: .7;
 }
 
-.sec_instagram #sbi_images .sbi_item .sbi_photo_wrap .sbi_photo {
+.sec_instagram .wdi_feed_item {
     max-width: 192px !important;
     max-height: 192px !important;
 }
 
-.sec_instagram .s5_slider .item, .sec_instagram #sbi_images .sbi_item {
+.sec_instagram .s5_slider .item, .sec_instagram .wdi_feed_item {
     text-decoration: none;
 }
 
-.sec_instagram .s5_slider .item:hover, .sec_instagram #sbi_images .sbi_item:hover {
+.sec_instagram .s5_slider .item:hover, .sec_instagram .wdi_feed_item:hover {
     opacity: .7;
 }
 
@@ -2322,7 +2322,7 @@ body:not(.page-top) #mainvisual h1 {
         padding-bottom: 50px;
     }
 
-    .sec_instagram .s5_slider, .sec_instagram #sbi_images {
+    .sec_instagram .s5_slider, .sec_instagram .wdi_feed_wrapper {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -2333,7 +2333,7 @@ body:not(.page-top) #mainvisual h1 {
         padding-right: 2% !important;
     }
 
-    .sec_instagram .s5_slider .item, .sec_instagram #sbi_images .sbi_item {
+    .sec_instagram .s5_slider .item, .sec_instagram .wdi_feed_wrapper .wdi_feed_item {
         width: calc(96% / 3) !important;
         margin-bottom: 2% !important;
     }
@@ -2396,7 +2396,7 @@ body {
 } */
 
 @media (min-width: 768px) and (max-width: 999px) {
-    #header nav a {
+    #gnav nav a {
         margin: 0 15px;
         white-space: nowrap;
     }
@@ -2407,7 +2407,7 @@ body {
         max-width: inherit;
     }
 
-    #header nav a {
+    #gnav nav a {
         margin: 0;
     }
 }

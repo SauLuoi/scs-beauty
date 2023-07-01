@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     $('.mv_slider').slick({
         dots: true,
         infinite: true,
@@ -65,35 +66,6 @@ $(document).ready(function () {
         ]
     });
 
-    $('#sbi_images').slick({
-        slidesToShow: 9,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 0,
-        speed: 8000,
-        pauseOnHover: false,
-        cssEase: 'linear',
-        arrows: false,
-        responsive: [
-            {
-                breakpoint: 1919,
-                settings: {
-                    slidesToShow: 7,
-                }
-            },
-            {
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 5,
-                }
-            },
-            {
-                breakpoint: 767,
-                settings: "unslick"
-            }
-        ]
-    });
-
     $('.slider_recommend').slick({
         dots: false,
         infinite: true,
@@ -114,14 +86,52 @@ $(document).ready(function () {
         ]
     });
 
+    setTimeout(function () {
+        $('.wdi_feed_wrapper').slick({
+            slidesToShow: 9,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 0,
+            speed: 8000,
+            pauseOnHover: false,
+            cssEase: 'linear',
+            arrows: false,
+            responsive: [
+                {
+                    breakpoint: 1919,
+                    settings: {
+                        slidesToShow: 7,
+                    }
+                },
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 5,
+                    }
+                },
+                {
+                    breakpoint: 767,
+                    settings: "unslick"
+                }
+            ]
+        });
+    }, 2000)
+
     setHeightItem();
+
+    HidePagiSlide();
+
 });
 
 function setHeightItem() {
-    var widthItem = $('.sec01 .inner .item figure, .sec02 .inner .item figure');
+    var widthItem = $('.sec01 .inner .item figure, .sec02 .inner .item figure, .list-item-post .item figure');
     widthItem.height(widthItem.width());
 }
 
-$(document).ready(function () {
-
-})
+function HidePagiSlide() {
+    var item = $('.box-slider .item');
+    if(item.length === 1){
+        $('.box-slider .slick-dots').hide();
+    }
+    console.log(item.length);
+}

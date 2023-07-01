@@ -8,8 +8,8 @@ $top_image_galley = get_field('top_image_galley', $page_id);
         foreach ($top_image_galley as $img) {
             $image = $img;
             ?>
-            <a href="javascript:void(0)" class="ov_hover">
-                <img src="<?php echo $image; ?>" alt="banner"></a>
+            <a href="<?php echo $image['description']; ?>" class="ov_hover">
+                <img src="<?php echo $image['url']; ?>" alt="banner"></a>
         <?php }
     } ?>
 </section>

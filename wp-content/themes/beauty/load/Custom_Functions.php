@@ -11,8 +11,11 @@ function core_theme_Style()
 
 
     // js
-    wp_register_script('jquery-js', "https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js", array('jquery'), false, true);
+    wp_register_script('jquery-js', get_stylesheet_directory_uri() . "/assets/vn/js/jquery-3.6.3.min.js", array('jquery'), false, true);
     wp_enqueue_script('jquery-js');
+
+    wp_register_script('jquery-js-custom', get_stylesheet_directory_uri() . "/assets/vn/js/jquery.mCustomScrollbar.min.js", array('jquery'), false, true);
+    wp_enqueue_script('jquery-js-custom');
 
     wp_register_script('script-js', get_stylesheet_directory_uri() . "/assets/vn/js/script.js", array('jquery'), false, true);
     wp_enqueue_script('script-js');
@@ -114,7 +117,8 @@ add_filter('wpcf7_form_elements', function ($content) {
 
 
 // Remove admin menu
-// function core_custom_admin_menu() {
+function core_custom_admin_menu()
+{
 //     // remove
 //     remove_menu_page( 'index.php' );                             // index
 //     remove_menu_page( 'edit-comments.php' );                     // comments
@@ -139,11 +143,16 @@ add_filter('wpcf7_form_elements', function ($content) {
 //     // remove_submenu_page( 'plugins.php', 'remove_taxonomy_base_slug' );      // remove_taxonomy_base_slug
 //     // remove_submenu_page( 'options-general.php', 'breadcrumb-navxt' );       // breadcrumb-navxt
 
-//     global $menu;       // Global to get menu array
-//     global $submenu;    // Global to get submenu array
+    global $menu;       // Global to get menu array
+    global $submenu;    // Global to get submenu array
+
+//    echo '<pre>';
+//    var_dump($menu);
 
 //     // rename
-//     // $menu[10][0] = 'Thư viện ảnh';                      // gallery
+    if (isset($menu[101][0])) {
+        $menu[101][0] = '認証';                      // authen
+    }
 //     // if( isset($menu[45][0]) ) {
 //     //     $menu[45][0] = 'Dữ liệu form';                  // cf7 db
 //     // }
@@ -153,8 +162,9 @@ add_filter('wpcf7_form_elements', function ($content) {
 //     $submenu['themes.php'][6][1] = '';                  // submenu customize
 //     // $submenu['edit.php?post_type=product'][16][1] = ''; // woo tag
 //     // $submenu['edit.php?post_type=product'][17][1] = ''; // woo attribute
-// }
-// add_action( 'admin_menu', 'core_custom_admin_menu' );
+}
+
+add_action('admin_menu', 'core_custom_admin_menu');
 
 
 // Query_post_by_custompost

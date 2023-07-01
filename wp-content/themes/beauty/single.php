@@ -4,7 +4,6 @@ $tags = get_the_tags();
 $cats = get_the_category();
 $title = get_the_title();
 $feature = get_the_post_thumbnail_url();
-$content = get_the_content();
 
 //field
 $post_link_video = get_field('post_link_video');
@@ -12,7 +11,16 @@ $post_choose_image = get_field('post_choose_image');
 ?>
 <header id="header">
     <?php get_template_part("template-part/global/header"); ?>
-    <?php get_template_part("template-part/part/main-visual-breadcrumb"); ?>
+    <?php
+    //field page
+    $heading = get_field('heading');
+    ?>
+    <div id="mainvisual">
+        <div class="container">
+            <h1>THÔNG TIN SẢN PHẨM</h1>
+        </div>
+    </div>
+    <?php get_template_part("template-part/global/breadcrumb"); ?>
 
 </header>
 
@@ -48,7 +56,7 @@ $post_choose_image = get_field('post_choose_image');
         <?php echo do_shortcode('[ez-toc]'); ?>
         <!--        </div>-->
         <div class="post-content wysiwyg">
-            <?php echo $content; ?>
+            <?php the_content(); ?>
 
             <?php if ($post_link_video) { ?>
                 <p>YouTubeのiframe埋込のイメージ</p>

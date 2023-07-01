@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="f0c29333-e78f-4c11-b931-8c130f14c5cd" name="scs" url="http://ftp.bzex9qmkgu.genhosting.net">
-        <fileTransfer rootFolder="/public_html/bijin-media.com" host="ftp.bzex9qmkgu.genhosting.net" port="21">
+      <webServer id="7e4e7b8d-ac09-43a1-be12-e2b9a7b8081c" name="beauty" url="http://ftp.bzex9qmkgu.genhosting.net">
+        <fileTransfer host="ftp.bzex9qmkgu.genhosting.net" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

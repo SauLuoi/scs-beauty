@@ -15,7 +15,7 @@ $top_search_category = get_field('top_search_category');
                     $cat_slug = get_category_link($cat_id);
                     $cat_feature = get_field('feature', 'category_' . $cat_id);
                     ?>
-                    <a href="<?php bloginfo("url"); ?>/item-jp?cat=<?php echo $cat_id; ?>">
+                    <a href="<?php bloginfo("url"); ?>/jp/item?cat=<?php echo $cat_id; ?>">
                         <span><?php echo $cat_name; ?></span>
                         <figure>
                             <img src="<?php echo $cat_feature; ?>"

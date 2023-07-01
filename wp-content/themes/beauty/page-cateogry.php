@@ -25,9 +25,9 @@ $max_num_pages = $query->max_num_pages;
 
 <div class="main-content">
     <div class="content">
-        <h2 class="ttlh2-post">
-            Category
-        </h2>
+<!--        <h2 class="ttlh2-post">-->
+<!--            -->
+<!--        </h2>-->
         <?php if ($query->have_posts()) { ?>
             <div class="list-item-post">
                 <?php

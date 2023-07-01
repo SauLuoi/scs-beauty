@@ -2,13 +2,24 @@
 $h_logo = get_field('h_logo', 'option');
 ?>
 
+<style>
+    @media (min-width: 768px) {
+        body:not(.page-top) #header nav ul {
+            justify-content: start;
+        }
+
+        body:not(.page-top) #header nav ul li {
+            margin-left: 40px;
+        }
+    }
+</style>
 <div class="container">
     <div class="inner">
-        <p class="btn-language bg01 sp">
+        <p class="btn-language bg01 sp fnt-notosan">
             <img src="<?php bloginfo('template_url') ?>/assets/vn/images/common/language.png" alt="language">
         </p>
         <div class="left">
-            <p class="logo">
+            <p class="logo fnt-notosan">
                 <a href="<?php bloginfo('url'); ?>/jp">
                     <img src="<?php echo $h_logo; ?>" alt="美⼈">
                     <span>Người đẹp</span>
@@ -27,7 +38,7 @@ $h_logo = get_field('h_logo', 'option');
                     'theme_location' => 'primary-ja',
                     'container' => 'nav',
                     'container_class' => 'navbar',
-                    'menu_class' => 'item',
+                    'menu_class' => 'item fnt-notosan',
                 );
                 wp_nav_menu($args);
 
@@ -45,8 +56,8 @@ $h_logo = get_field('h_logo', 'option');
             $h_button_target_ja = $h_button_ja['target'];
             ?>
             <p class="btn">
-                <a href="<?php echo $h_button_url; ?>" target="<?php echo $h_button_target; ?>">
-                    <?php echo $h_button_title; ?>
+                <a href="<?php echo $h_button_url_ja; ?>" target="<?php echo $h_button_target_ja; ?>">
+                    <?php echo $h_button_title_ja; ?>
                 </a>
             </p>
         </div>

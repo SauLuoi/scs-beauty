@@ -4,11 +4,11 @@ function create_post_type($title, $slug_code, $slug)
     $labels = array(
         'name' => __($title, 'text_domain'),
         'singular_name' => __($title, 'text_domain'),
-        'add_new' => __('Add New', 'text_domain'),
-        'add_new_item' => __('Add New', 'text_domain'),
+        'add_new' => __('新規追加', 'text_domain'),
+        'add_new_item' => __('新規追加', 'text_domain'),
         'edit_item' => __('Edit', 'text_domain'),
         'new_item' => '',
-        'all_items' => __('All', 'text_domain'),
+        'all_items' => __('投稿一覧', 'text_domain'),
         'view_item' => '',
         'search_items' => __('Search', 'text_domain'),
         'not_found' => __('Not found', 'text_domain'),
@@ -101,7 +101,6 @@ function create_tag_taxonomies($title, $slug, $slug_code, $post_type)
         'update_count_callback' => '_update_post_term_count',
         'query_var' => true,
         'rewrite' => array('slug' => __($slug, 'text_domain')),
-        'show_tagcloud' => true,
     );
     register_taxonomy($slug_code, $post_type, $args);
 }

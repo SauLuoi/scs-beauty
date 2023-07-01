@@ -1,5 +1,8 @@
+<?php
+$lang = get_field('lang_choose_language');
+?>
 <!DOCTYPE html>
-<html>
+<html lang="<?php echo $lang; ?>">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">   <!-- IEの互換表示無効 -->
@@ -9,8 +12,6 @@
     <title><?php echo core_title(); ?></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <!-- Font Awesome BootstrapCDN -->
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700;800;900&family=Libre+Bodoni:wght@400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap">
     <link rel="stylesheet"
@@ -22,4 +23,5 @@
 $id_front = get_the_ID();
 ?>
 <body class="<?php echo is_front_page() || $id_front === 164 ? 'page-top' : ''; ?>">
+<?php echo get_field('insert_code_footer', 'option'); ?>
 <section id="wrapper"><!-- wrapper -->

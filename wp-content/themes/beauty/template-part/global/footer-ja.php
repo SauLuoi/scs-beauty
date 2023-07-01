@@ -15,12 +15,13 @@ $h_button_target_ja = $h_button_ja['target'];
             $args = array(
                 'theme_location' => 'footer-ja',
                 'container' => 'nav',
+                'menu_class' => 'fnt-notosan',
             );
             wp_nav_menu($args);
 
         }
         ?>
-        <p class="btn">
+        <p class="btn  fnt-notosan">
             <a href="<?php echo $h_button_url_ja; ?>" target="<?php echo $h_button_target_ja; ?>">
                 <?php echo $h_button_title_ja; ?>
             </a>
@@ -32,7 +33,7 @@ $h_button_target_ja = $h_button_ja['target'];
             </a>
         </p>
     </div>
-    <address class="container"><?php echo $copyright; ?></address>
+    <address class="container fnt-notosan"><?php echo $copyright; ?></address>
     <p class="page_up"><span class="up"></span></p>
 </footer>
 <!-- end footer -->

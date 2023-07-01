@@ -20,7 +20,7 @@ $tags = get_tags($args);
             $tag_slug = $tag->slug;
             $tag_link = get_tag_link($tag->term_id);
             ?>
-            <a href="<?php bloginfo("url"); ?>/item-jp?tag=<?php echo $tag_id; ?>"># <?php echo $tag_name; ?></a>
+            <a class="fnt-notosan" href="<?php bloginfo("url"); ?>/jp/item?tag=<?php echo $tag_id; ?>"># <?php echo $tag_name; ?></a>
         <?php } ?>
     </div>
 </section>

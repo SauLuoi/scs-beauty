@@ -9,14 +9,13 @@ $link = get_the_permalink($id);
     <h2 class="fnt-bodoni ttlh2"><span>SHARE</span></h2>
     <ul class="list-social">
         <li>
-            <a href="<?php echo $post_social_tw; ?>" target="_blank">
+            <a href="https://twitter.com/share?url=<?php echo $link; ?>" target="_blank">
                 <img src="<?php bloginfo("template_url"); ?>/assets/vn/images/item/tw.png"
-
                      alt="twitter">
             </a>
         </li>
         <li>
-            <a href="<?php echo $post_social_fb; ?>" target="_blank">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $link; ?>" target="_blank">
                 <img src="<?php bloginfo("template_url"); ?>/assets/vn/images/item/fb.png"
                      alt="facebook">
             </a>

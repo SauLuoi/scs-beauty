@@ -1,6 +1,6 @@
 <?php
-$ins_link = get_field('ins_link');
-$ins_embed = get_field('ins_embed');
+$ins_link = get_field('ins_link','option');
+$ins_embed = get_field('ins_embed','option');
 ?>
 <section id="sec05" class="sec_instagram">
     <div class="container">

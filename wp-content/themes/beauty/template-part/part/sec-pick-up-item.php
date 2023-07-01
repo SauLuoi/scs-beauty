@@ -1,5 +1,6 @@
 <?php
 $top_pick_up_choose_item = get_field('top_pick_up_choose_item');
+$page_id = get_the_ID();
 ?>
 
 <?php if ($top_pick_up_choose_item) { ?>
@@ -25,12 +26,12 @@ $top_pick_up_choose_item = get_field('top_pick_up_choose_item');
                                 <img src="<?php echo $feature; ?>" alt="<?php echo $title; ?>">
                             </figure>
                         </a>
-                        <h3 class="ttl">
+                        <h3 class="ttl <?php echo $page_id === 164 ? 'fnt-notosan' : ''; ?> ">
                             <a href="<?php echo $link; ?>">
                                 <strong><?php echo $title; ?></strong>
                             </a>
                         </h3>
-                        <p class="txt">
+                        <p class="txt <?php echo $page_id === 164 ? 'fnt-notosan' : ''; ?>">
                             <?php
                             if (!empty($tag)) {
                                 foreach ($tag as $tag_item) {
@@ -40,7 +41,8 @@ $top_pick_up_choose_item = get_field('top_pick_up_choose_item');
                                     }
                                     $tag_slug = $tag_item->slug;
                                     ?>
-                                    <a href="<?php bloginfo('url'); ?>/tag/<?php echo $tag_slug; ?>" class="c_53b5ed">
+                                    <a href="<?php bloginfo('url'); ?>/tag/<?php echo $tag_slug; ?>"
+                                       class="c_53b5ed <?php echo $page_id === 164 ? 'fnt-notosan' : ''; ?>">
                                         <small># <?php echo $tag_name; ?></small>
                                     </a>
                                 <?php }
@@ -54,7 +56,8 @@ $top_pick_up_choose_item = get_field('top_pick_up_choose_item');
                                     }
                                     $tags_slug = $tags_item->slug;
                                     ?>
-                                    <a href="<?php bloginfo('url'); ?>/tag/<?php echo $tags_slug; ?>" class="c_53b5ed">
+                                    <a href="<?php bloginfo('url'); ?>/item-jp?tag=<?php echo $tags_item->term_id; ?>"
+                                       class="c_53b5ed <?php echo $page_id === 164 ? 'fnt-notosan' : ''; ?>">
                                         <small># <?php echo $tags_name; ?></small>
                                     </a>
                                 <?php }

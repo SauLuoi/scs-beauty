@@ -10,7 +10,7 @@ $tags = get_tags($args);
 ?>
 <section id="sec04" class="sec04">
     <div class="container">
-        <h2 class="fnt-bodoni ttlh2">
+        <h2 class="fnt-bodoni ttlh2 fnt-notosan">
             <img src="<?php bloginfo('template_url'); ?>/assets/vn/images/s4_ico.png" alt="KEYWORD">
             <span>KEYWORD</span>
         </h2>
@@ -24,10 +24,10 @@ $tags = get_tags($args);
                     $tag_slug = $tag->slug;
                     $tag_link = get_tag_link($tag->term_id);
                     ?>
-                    <a href="<?php bloginfo("url"); ?>/item-jp?tag=<?php echo $tag_id; ?>"># <?php echo $tag_name; ?></a>
+                    <a class="fnt-notosan" href="<?php bloginfo("url"); ?>/jp/item?tag=<?php echo $tag_id; ?>"># <?php echo $tag_name; ?></a>
                 <?php } ?>
             </div>
         <?php } ?>
-        <p class="btn"><a href="<?php bloginfo("url"); ?>/item-jp/">VIEW ALL</a></p>
+        <p class="btn fnt-notosan"><a href="<?php bloginfo("url"); ?>/jp/item">VIEW ALL</a></p>
     </div>
 </section>

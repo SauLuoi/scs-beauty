@@ -40,16 +40,16 @@ $query = new WP_Query($args);
                         <img src="<?php echo $feature; ?>"
                              alt="<?php echo $title; ?>">
                     </figure>
-                    <h3 class="ttl"><strong><?php echo $title; ?></strong></h3>
+                    <h3 class="ttl fnt-notosan"><strong><?php echo $title; ?></strong></h3>
                     <?php if ($tags) { ?>
-                        <p class="txt">
+                        <p class="txt fnt-notosan">
                             <?php foreach ($tags as $tag) {
                                 $tag_name = $tag->name;
                                 if (strlen($tag_name) > 25) {
                                     $tag_name = substr($tag_name, 0, 25) . '...';
                                 }
                                 ?>
-                                <small class="c_53b5ed"># <?php echo $tag_name; ?></small>
+                                <small class="c_53b5ed "># <?php echo $tag_name; ?></small>
                             <?php } ?>
                         </p>
                     <?php } ?>

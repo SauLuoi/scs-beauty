@@ -8,7 +8,6 @@ Template Name: Top JP
 <header id="header">
     <?php get_template_part("template-part/global/header-ja"); ?>
     <?php get_template_part("template-part/part/main-visual-top"); ?>
-
 </header>
 <!-- end header -->
 <main id="main"><!-- main -->

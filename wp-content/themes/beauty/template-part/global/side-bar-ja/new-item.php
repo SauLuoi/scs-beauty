@@ -22,14 +22,14 @@ $query_args = new WP_Query($args);
                     $feature = get_the_post_thumbnail_url();
                     $link = get_the_permalink();
                     ?>
-                    <div class="item">
+                    <div class="item fnt-notosan">
                         <a href="<?php echo $link; ?>">
                             <figure>
                                 <img src="<?php echo $feature; ?>"
                                      alt="<?php echo $title; ?>">
                             </figure>
                         </a>
-                        <h3 class="ttl"><a href="<?php echo $link; ?>">
+                        <h3 class="ttl fnt-notosan"><a href="<?php echo $link; ?>">
                                 <strong><?php echo $title; ?></strong></a>
                         </h3>
                     </div>

@@ -29,19 +29,20 @@ $query_args = new WP_Query($args);
                                 <img src="<?php echo $feature; ?>" alt="<?php echo $title; ?>">
                             </figure>
                         </a>
-                        <h3 class="ttl">
+                        <h3 class="ttl fnt-notosan">
                             <a href="<?php echo $link; ?>">
                                 <strong><?php echo $title; ?></strong>
                             </a>
                         </h3>
-                        <p class="txt">
+                        <p class="txt fnt-notosan">
                             <?php
                             if ($tag) {
                                 foreach ($tag as $tag_item) {
                                     $tag_name = $tag_item->name;
                                     $tag_slug = $tag_item->slug;
                                     ?>
-                                    <a href="<?php bloginfo('url'); ?>/item-jp?tag=<?php echo $tag_item->id;?>" class="c_53b5ed">
+                                    <a href="<?php bloginfo('url'); ?>/jp/item?tag=<?php echo $tag_item->term_id; ?>"
+                                       class="c_53b5ed">
                                         <small># <?php echo $tag_name; ?></small>
                                     </a>
                                 <?php }

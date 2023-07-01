@@ -7,23 +7,23 @@ include_once get_template_directory() . '/load/Performance.php';
 /* Create CTPost */
 // (title, slug_code, slug)
 // create_post_type("Sản phẩm","product","san-pham");
-create_post_type("Posts JP", "post-jp", "post-jp");
-create_post_type("Location", "location", "location");
+create_post_type("投稿 JP", "post-jp", "jp");
+create_post_type("販売店", "location", "location");
 
 /* Create CTTax */
 // (title, slug, slug_code, post_type)
 // create_taxonomy_theme("Danh mục Sản phẩm","danh-muc-san-pham","product_cat","product");
-create_taxonomy_theme("Categories", "categories-jp", "posts_cat_jp", "post-jp");
-create_taxonomy_theme("District", "district", "district", "location");
+create_taxonomy_theme("カテゴリー", "categories-jp", "posts_cat_jp", "post-jp");
+create_taxonomy_theme("販売地区設定", "district", "district", "location");
 
-create_tag_taxonomies('Tags', 'tags-jp', 'posts_tags_jp', 'post-jp');
+create_tag_taxonomies('タグ', 'tags-jp', 'posts_tags_jp', 'post-jp');
 
 
 // Create menu Theme option use Acf Pro
 if (function_exists('acf_add_options_page')) {
     acf_add_options_page(array(
-        'page_title' => 'Theme option',
-        'menu_title' => 'Theme option',
+        'page_title' => 'テーマのオプション',
+        'menu_title' => 'テーマのオプション',
         'menu_slug' => 'theme-settings',
         'capability' => 'edit_posts',
         'redirect' => false
@@ -93,7 +93,7 @@ function core_paginationCustom($max_num_pages)
         }
 
         if ($paged == 1) {
-            echo '<a href="javascript:void(0)" class="pagination-a">
+            echo '<a href="javascript:void(0)" class="disabled">
             &nbsp;</a>';
         }
 
@@ -118,7 +118,7 @@ function core_paginationCustom($max_num_pages)
             &nbsp;</a>';
         }
         if ($paged == $max_num_pages) {
-            echo '<a href="javascript:void(0)" class="pagination-a">
+            echo '<a href="javascript:void(0)" class="disabled">
             &nbsp;</a>';
         }
     }
@@ -132,6 +132,7 @@ function wp_breadcrumbs()
     $currentBefore = '<li class="current"><span>';
     $currentAfter = '</li></span>';
     $cat_heading = 'Thông tin sản phẩm';
+    $link_page_item = get_bloginfo("url") . '/item';
 
     if (!is_home() && !is_front_page() || is_paged()) {
 
@@ -150,7 +151,7 @@ function wp_breadcrumbs()
             $thisCat = get_category($thisCat);
             $parentCat = get_category($thisCat->parent);
             if ($thisCat->parent != 0) echo(get_category_parents($parentCat, TRUE, ' '));
-            echo '<li><a href="javascript:void(0)">' . $cat_heading . '</a></li>';
+            echo '<li><a href="'.$link_page_item.'">' . $cat_heading . '</a></li>';
             echo $currentBefore . '';
             single_cat_title();
             echo '' . $currentAfter;
@@ -168,7 +169,7 @@ function wp_breadcrumbs()
             echo $currentBefore . get_the_time('Y') . $currentAfter;
 
         } elseif (is_single()) {
-            echo '<li><a href="javascript:void(0)">' . $cat_heading . '</a></li>';
+            echo '<li><a href="'.$link_page_item.'">' . $cat_heading . '</a></li>';
             $postType = get_post_type();
             if ($postType == 'post') {
                 $cat = get_the_category();
@@ -204,7 +205,7 @@ function wp_breadcrumbs()
         } elseif (is_search()) {
             echo $currentBefore . __('Search Results for:', 'wpinsite') . ' &quot;' . get_search_query() . '&quot;' . $currentAfter;
         } elseif (is_tag()) {
-            echo '<li><a href="javascript:void(0)">' . $cat_heading . '</a></li>';
+            echo '<li><a href="'.$link_page_item.'">' . $cat_heading . '</a></li>';
             echo $currentBefore . __('', 'wpinsite');
             single_tag_title();
             echo $currentAfter;
@@ -258,3 +259,36 @@ function get_template_id($template)
     }
     return $id;
 }
+
+
+//contact
+
+require_once(get_template_directory() . '/func/contact.php');
+require_once(get_template_directory() . '/func2/contact.php');
+
+//custom permalink
+//function stackoverflow_remove_cpt_slug( $post_link, $post ) {
+//    if ( 'post-jp' === $post->post_type && 'publish' === $post->post_status ) {
+//        $post_link = str_replace( '/' . $post->post_type . '/', '/', $post_link );
+//    }
+//    return $post_link;
+//}
+//add_filter( 'post_type_link', 'stackoverflow_remove_cpt_slug', 10, 3 );
+//
+//function stackoverflow_add_cpt_post_names_to_main_query( $query ) {
+//    // Return if this is not the main query.
+//    if ( ! $query->is_main_query() ) {
+//        return;
+//    }
+//    // Return if this query doesn't match our very specific rewrite rule.
+//    if ( ! isset( $query->query['page'] ) || 2 !== count( $query->query ) ) {
+//        return;
+//    }
+//    // Return if we're not querying based on the post name.
+//    if ( empty( $query->query['name'] ) ) {
+//        return;
+//    }
+//    // Add CPT to the list of post types WP will include when it queries based on the post name.
+//    $query->set( 'post_type', array( 'post', 'page', 'post-jp' ) );
+//}
+//add_action( 'pre_get_posts', 'stackoverflow_add_cpt_post_names_to_main_query' );
